@@ -8,6 +8,7 @@ Sanan Project 를 직접 테스트 및 실행할 수 있도록 방법을 가이�
 ## 1. 빌드된 결과물 테스트 가이드
 
 ### ■ 테스트환경
+- Java : Java 8 (JRE)
 - (로컬)서버 : Windows 10 x64
 - 클라이언트 : Edge Browser (42.17134.1.0) / Chrome Browser (71.0.3578.98, 64비트)
 
@@ -41,7 +42,7 @@ Sanan Project 를 직접 테스트 및 실행할 수 있도록 방법을 가이�
 ## 2. 개발 환경 세팅 후, 테스트 가이드
 
 ### ■ 개발환경
-- Java : Java 8
+- Java : Java 8 (JDK)
 - Framework : SpringBoot 
 - IDE : STS (spring-tool-suite-4-4.1.0.RELEASE)
 - Build : Maven 기반 Project
