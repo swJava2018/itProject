@@ -1,6 +1,5 @@
 # Sanan Project Install 및 실행가이드
 
-## 가이드 설명
 README.md 문서는 Sanan Project 를 직접 테스트 및 실행할 수 있도록 방법을 가이드해주는 문서입니다.   
 아래의 가이드를 따라 진행해주시면, 직접 Sanan Project를 정상적으로 테스트할 수 있습니다.
 
