@@ -55,7 +55,7 @@ public class PageController {
 			throw new SananException(SananErrorCode.USER_NOT_FOUND);		
 		
 		if (passwordEncoder.matches(login.getPassword(), selected_user.getPassword())) {
-			modelAndView = new ModelAndView("index");
+			modelAndView = new ModelAndView("redirect:index");
 			session.setAttribute(SESSION_ID, login.getId());
 			return modelAndView;
 			
@@ -68,7 +68,7 @@ public class PageController {
 	public ModelAndView login(HttpSession session) {		
 		ModelAndView modelAndView;		
 		if (session.getAttribute(SESSION_ID) != null) {
-			modelAndView = new ModelAndView("index");
+			modelAndView = new ModelAndView("redirect:index");
 			return modelAndView;
 		}
 		
@@ -86,7 +86,7 @@ public class PageController {
 		user.setId(enroll.getId());
 		user.setPassword(passwordEncoder.encode(enroll.getPassword()));					
 		userService.insertUser(user);
-		modelAndView = new ModelAndView("index");
+		modelAndView = new ModelAndView("redirect:index");
 		session.setAttribute(SESSION_ID, enroll.getId());
 		return modelAndView;
 	}
