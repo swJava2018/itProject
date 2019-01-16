@@ -1,4 +1,4 @@
-# San Project Install 및 실행가이드
+# Sanan Project Install 및 실행가이드
 
 ## 가이드 설명
 README.md 문서는 Sanan Project 를 직접 테스트 및 실행할 수 있도록 방법을 가이드해주는 문서입니다.   
