@@ -20,7 +20,7 @@ README.md 문서는 Sanan Project 를 직접 테스트 및 실행할 수 있도�
 ### 1.3. 테스트 실행 가이드
 #### 1.3.1. 프로젝트 및 실행가능한 빌드 결과물 다운 (git client 다운, git lfs 포함)
       1. https://git-scm.com/download/win 접속
-      2. "64-bit Git for Windows Setup" 링크로 프로그램 다운 및 설치
+      2. "64-bit Git for Windows Setup" 프로그램 다운 및 설치
 
 #### 1.3.2. 프로젝트 다운
       1. workspace 폴더 생성 <--D:\workspace
@@ -36,8 +36,7 @@ README.md 문서는 Sanan Project 를 직접 테스트 및 실행할 수 있도�
            Checking out files: 100% (51/51), done.
 		
          $
-          ※ 주의, "Checking out files" 로그가 출력된 후, 명령 프롬프트를 종료하지 않고
-             다음 명령 줄(=$)이 나오기까지 기다려주어야 모든 파일이 다운로드 됩니다. 
+          ※ 주의, 모든 로그가 출력된 후, 다음 명령 줄(=$)이 나오기까지 기다려주어야 모든 파일이 다운로드 됩니다. 
             	             
 #### 1.3.3. 서버 실행
       1. workspace/sanan/release 폴더로 이동 > (빈 공간에서) Shift + 마우스 우클릭 > 여기에 PowerShell 창 열기
