@@ -9,7 +9,7 @@
  	</ul>
 </div><hr>
 
-<h2 style="text-align:center">로그인</h2>
+<h1 style="text-align:center">로그인</h1>
 
 <div class="card">
     <form class="pure-form pure-form-aligned" style="margin: 5px 5px 5px 5px;" 
@@ -27,6 +27,9 @@
      	<button class="pure-button pure-button-primary" type="submit">
      		로그인
      	</button>
+     	<a class="pure-button pure-button-primary" href="../enroll">
+     		회원가입
+     	</a>
      	<c:if test="${error != null}">
 			<p>${error}</p>
 		</c:if>
