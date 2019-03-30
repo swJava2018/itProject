@@ -9,24 +9,54 @@
  	</ul>
 </div><hr>
 
-<h2 style="text-align:center">회원가입</h2>
+<h1 style="text-align:center">회원가입</h1>
 
 <div class="card">
     <form class="pure-form pure-form-aligned" style="margin: 5px 5px 5px 5px;" 
     	action="/enroll" method="post">
         <fieldset>
+        	<div class="pure-control-group">
+                <strong><label for="name">이름 : </label></strong>
+                <input name="name" type="text" placeholder="이름" style="width: 200px;">
+            </div>
+            
             <div class="pure-control-group">
-                <label for="id">ID : </label>
+                <strong><label for="nickname">닉네임 : </label></strong>
+                <input name="nickname" type="text" placeholder="닉네임" style="width: 200px;">
+            </div>
+            
+            <div class="pure-control-group">
+                <strong><label for="shcool">학교 : </label></strong>
+                <input name="school" type="text" placeholder="학교" style="width: 200px;">
+            </div>
+            
+            <div class="pure-control-group">
+                <strong><label for="Email">이메일 : </label></strong>
+                <input name="Email" type="text" placeholder="Email Address" style="width: 200px;">     
+            </div>
+                        
+            <div class="pure-control-group">
+                <strong><label for="id">ID : </label></strong>
                 <input name="id" type="text" placeholder="ID" style="width: 200px;">
             </div>
+            
             <div class="pure-control-group">
-                <label for="password">Password : </label>
+                <strong><label for="password">Password : </label></strong>
                 <input name="password" type="password" placeholder="Password" style="width: 200px;">
-            </div>  
+            </div>
+            
+            <div class="pure-control-group">
+                <strong><label for="gender">성별  </label></strong>
+                <input name="gender" type="radio">남자
+                <input name="gender" type="radio">여자
+            </div>
      	</fieldset>
      	<button class="pure-button pure-button-primary" type="submit">
      		회원가입
      	</button>
+     	<a class="pure-button pure-button-primary" href="../login">
+     		취소
+     	</a>
      	<c:if test="${error != null}">
 				<p>${error}</p>
 		</c:if>
