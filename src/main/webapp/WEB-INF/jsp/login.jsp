@@ -9,7 +9,7 @@
  	</ul>
 </div><hr>
 
-<h2 style="text-align:center">로그인</h2>
+<h2 style="text-align:center">Login</h2>
 
 <div class="card">
     <form class="pure-form pure-form-aligned" style="margin: 5px 5px 5px 5px;" 
