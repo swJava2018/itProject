@@ -49,6 +49,76 @@ body {
 	width: 120px;
 }
 
+#div1{
+	position:static;
+	line-height: 176.5px;
+   	display: block;
+	height:176.5px;
+	width:50%;
+	float:left;
+	text-align:center;
+	background:red;
+	font-size: 20px;
+}
+
+#div2{
+	position:static;
+	height:176.5px;
+	width:50%;
+	float:right;
+	text-align:center;
+	line-height: 176.5px;
+   	display: block;
+	background:orange;
+	font-size: 20px;
+}
+
+#div3{
+	position:static;
+	height:176.5px;
+	width:50%;
+	float:left;
+	text-align:center;
+	line-height: 176.5px;
+   	display: block;
+	background:yellow;
+	font-size: 20px;
+}
+
+#div4{
+	position:static;
+	height:176.5px;
+	width:50%;
+	float:right;
+	text-align:center;
+	line-height: 176.5px;
+   	display: block;
+	background:green;
+	font-size: 20px;
+}
+#div5{
+	position:static;
+	height:176.5px;
+	width:50%;
+	float:left;
+	text-align:center;
+	line-height: 176.5px;
+   	display: block;
+	background:blue;
+	font-size: 20px;
+}
+#div6{
+	position:static;
+	height:176.5px;
+	width:50%;
+	float:right;
+	text-align:center;
+	line-height: 176.5px;
+   	display: block;
+	background:purple;
+	font-size: 20px;
+}
+
 
 
 
