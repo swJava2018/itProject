@@ -37,27 +37,27 @@
 </div>
 
 <div id="div1">
-	구역1.
+	구역1
 </div>
 
 <div id="div2">
-	구역2.
+	구역2
 </div>
 
 <div id="div3">
-	구역3.
+	구역3
 </div>
 
 <div id="div4">
-	구역4.
+	구역4
 </div>
 
 <div id="div5">
-	구역5.
+	구역5
 </div>
 
 <div id="div6">
-	구역6.
+	구역6
 </div>
 
 <%@include file="include/bottom.jsp" %>

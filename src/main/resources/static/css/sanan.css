@@ -58,7 +58,7 @@ body {
 	float:left;
 	text-align:center;
 	background:red;
-	font-size: 22px;
+	font-size: 20px;
 }
 
 #div2{
@@ -70,7 +70,7 @@ body {
 	line-height: 176.5px;
    	display: block;
 	background:orange;
-	font-size: 22px;
+	font-size: 20px;
 }
 
 #div3{
@@ -82,7 +82,7 @@ body {
 	line-height: 176.5px;
    	display: block;
 	background:yellow;
-	font-size: 22px;
+	font-size: 20px;
 }
 
 #div4{
@@ -94,7 +94,7 @@ body {
 	line-height: 176.5px;
    	display: block;
 	background:green;
-	font-size: 22px;
+	font-size: 20px;
 }
 #div5{
 	position:static;
@@ -105,7 +105,7 @@ body {
 	line-height: 176.5px;
    	display: block;
 	background:blue;
-	font-size: 22px;
+	font-size: 20px;
 }
 #div6{
 	position:static;
@@ -116,7 +116,7 @@ body {
 	line-height: 176.5px;
    	display: block;
 	background:purple;
-	font-size: 22px;
+	font-size: 20px;
 }
 
 
