@@ -15,6 +15,21 @@
     <form class="pure-form pure-form-aligned" style="margin: 5px 5px 5px 5px;" 
     	action="/enroll" method="post">
         <fieldset>
+         	<div class="pure-control-group">
+                <strong><label for="id">아이디 : </label></strong>
+                <input name="id" type="text" placeholder="아이디" style="width: 200px;">
+            </div>
+            
+            <div class="pure-control-group">
+                <strong><label for="pwd">비밀번호 : </label></strong>
+                <input name="pwd" type="password" placeholder="비밀번호" style="width: 200px;">
+            </div>
+            
+            <div class="pure-control-group">
+                <strong><label for="pwd_confirm">비밀번호 확인 : </label></strong>
+                <input name="pwd_confirm" type="password" placeholder="비밀번호 확인" style="width: 200px;">
+            </div>
+            
         	<div class="pure-control-group">
                 <strong><label for="name">이름 : </label></strong>
                 <input name="name" type="text" placeholder="이름" style="width: 200px;">
@@ -31,18 +46,18 @@
             </div>
             
             <div class="pure-control-group">
-                <strong><label for="Email">이메일 : </label></strong>
-                <input name="Email" type="text" placeholder="Email Address" style="width: 200px;">     
-            </div>
-                        
-            <div class="pure-control-group">
-                <strong><label for="id">ID : </label></strong>
-                <input name="id" type="text" placeholder="ID" style="width: 200px;">
+                <strong><label for="major">학과 : </label></strong>
+                <input name="major" type="text" placeholder="학과" style="width: 200px;">
             </div>
             
             <div class="pure-control-group">
-                <strong><label for="password">Password : </label></strong>
-                <input name="password" type="password" placeholder="Password" style="width: 200px;">
+                <strong><label for="grade">성적 : </label></strong>
+                <input name="grade" type="text" placeholder="성적" style="width: 200px;">
+            </div>
+            
+            <div class="pure-control-group">
+                <strong><label for="email">이메일 : </label></strong>
+                <input name="email" type="text" placeholder="Email Address" style="width: 200px;">     
             </div>
             
             <div class="pure-control-group">
