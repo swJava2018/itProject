@@ -9,7 +9,11 @@
  	</ul>
 </div><hr>
 
+<<<<<<< HEAD
+<h2 style="text-align:center">Login</h2>
+=======
 <h1 style="text-align:center">로그인</h1>
+>>>>>>> branch 'master' of https://github.com/swJava2018/itProject
 
 <div class="card">
     <form class="pure-form pure-form-aligned" style="margin: 5px 5px 5px 5px;" 
