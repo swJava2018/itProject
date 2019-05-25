@@ -84,7 +84,7 @@ public class PageController {
 		
 		User user = new User();
 		user.setId(enroll.getId());
-		user.setPassword(passwordEncoder.encode(enroll.getPassword()));					
+		user.setPassword(passwordEncoder.encode(enroll.getPwd()));					
 		userService.insertUser(user);
 		modelAndView = new ModelAndView("redirect:index");
 		session.setAttribute(SESSION_ID, enroll.getId());

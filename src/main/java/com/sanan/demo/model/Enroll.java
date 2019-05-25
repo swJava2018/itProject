@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 
 public class Enroll extends ModelObject {
 	private String id;
-    private String password;
+    private String pwd;
     
     public String getId() {
 		return id;
@@ -14,12 +14,12 @@ public class Enroll extends ModelObject {
 		this.id = id;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getPwd() {
+		return pwd;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
 	}
 
 	@Override
@@ -27,6 +27,6 @@ public class Enroll extends ModelObject {
     	Gson gson = new Gson();
     	Enroll obj = gson.fromJson(json, Enroll.class);
     	id = obj.getId();
-    	password = obj.getPassword();
+    	pwd = obj.getPwd();
     }
 }
