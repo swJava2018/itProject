@@ -9,33 +9,35 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.google.common.collect.ImmutableList;
+import com.sanan.demo.data.entity.PTUser;
 import com.sanan.demo.data.entity.User;
+import com.sanan.demo.data.repository.PTUserRepository;
 import com.sanan.demo.data.repository.UserRepository;
 import com.sanan.demo.exception.SananErrorCode;
 import com.sanan.demo.exception.SananException;
-import com.sanan.demo.service.UserService;
+import com.sanan.demo.service.PTUserService;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class PTUserServiceImpl implements PTUserService {
  
     @Autowired
-    UserRepository userRepository;
+    PTUserRepository userRepository;
      
     @Override
     @Transactional(readOnly = true, isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED)
-    public List<User> selectUserList() {
+    public List<PTUser> selectPTUserList() {
         return ImmutableList.copyOf(userRepository.findAll());
     }
  
     @Override
     @Transactional(readOnly = true, isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED)
-    public User selectUser(String id) {
+    public PTUser selectPTUser(String id) {
         return userRepository.findOne(id);
     }
  
     @Override
     @Transactional(readOnly = false, isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED)
-    public void insertUser(User user) throws SananException {    	
+    public void insertPTUser(PTUser user) throws SananException {    	
     	if(userRepository.exists(user.getId())) {
     		throw new SananException(SananErrorCode.USER_ALREADY_EXISTED);
     	} else {
@@ -45,13 +47,15 @@ public class UserServiceImpl implements UserService {
  
     @Override
     @Transactional(readOnly = false, isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED)
-    public void updateUser(User user) {
+    public void updatePTUser(PTUser user) {
         userRepository.save(user);
     }
- 
+
     @Override
     @Transactional(readOnly = false, isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED)
-    public void deleteUser(String id) {
+    public void deletePTUser(String id) {
         userRepository.delete(id); 
     }
+ 
+
 }
