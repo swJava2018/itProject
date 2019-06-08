@@ -18,6 +18,7 @@ import com.sanan.demo.data.entity.User;
 import com.sanan.demo.exception.SananErrorCode;
 import com.sanan.demo.exception.SananException;
 import com.sanan.demo.model.Enroll;
+import com.sanan.demo.model.Login;
 import com.sanan.demo.model.OpenAPIQuery;
 import com.sanan.demo.model.OpenAPIResultResponse;
 import com.sanan.demo.model.PTResponseMessage;
@@ -35,12 +36,29 @@ public class UserController {
 		
 		PTUser user = new PTUser();
 		user.setId(enroll.getId());
-		user.setPassword(enroll.getPwd());					
+		user.setPassword(enroll.getPwd());
 		userService.insertPTUser(user);
 		
 		PTResponseMessage res = new PTResponseMessage();
 		res.setErrCode(SananErrorCode.SUCCESS);
 		res.setErrMsg(SananErrorCode.getErrorMessage(SananErrorCode.SUCCESS));
+		return res;
+    }
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+    public PTResponseMessage login(@RequestBody Login login) throws SananException{   
+		PTResponseMessage res = new PTResponseMessage();
+		
+		PTUser user = userService.selectPTUser(login.getId());
+		if(user != null) {
+			res.setErrCode(SananErrorCode.SUCCESS);
+			res.setErrMsg(SananErrorCode.getErrorMessage(SananErrorCode.SUCCESS));
+		}
+		else {
+			res.setErrCode(SananErrorCode.USER_NOT_FOUND);
+			res.setErrMsg(SananErrorCode.getErrorMessage(SananErrorCode.USER_NOT_FOUND));
+		}
+		
 		return res;
     }
 }

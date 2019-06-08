@@ -5,8 +5,17 @@ import com.google.gson.Gson;
 public class Enroll extends ModelObject {
 	private String id;
     private String pwd;
+    private String school;
     
-    public String getId() {
+    public String getSchool() {
+		return school;
+	}
+
+	public void setSchool(String school) {
+		this.school = school;
+	}
+
+	public String getId() {
 		return id;
 	}
 
