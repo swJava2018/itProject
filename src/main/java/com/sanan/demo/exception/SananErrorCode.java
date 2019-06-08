@@ -1,7 +1,7 @@
 package com.sanan.demo.exception;
 
 public class SananErrorCode {
-	public static final int SUCCESS = 100;
+	public static final int SUCCESS = 200;
 	public static final int INTERNAL_ERROR = 101;
 	
 	// Search ErrorCode
@@ -15,6 +15,8 @@ public class SananErrorCode {
 	public static String getErrorMessage(int errorCode) {
 		String errMsg;
 		switch (errorCode) {		
+		case SUCCESS: 		errMsg = "성공입니다.";break;
+		
 		case SEARCH_KEYWORD_NOT_FOUND:	errMsg = "검색 결과가 없습니다."; break;
 		case USER_ALREADY_EXISTED:		errMsg = "이미 등록된 ID입니다."; break;
 		case USER_NOT_FOUND:			errMsg = "등록되지 않은 ID입니다."; break;
