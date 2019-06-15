@@ -1,11 +1,20 @@
 package com.sanan.demo.model;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 public class PTResponseMessage {
 	
 	private int errCode;
-    private String errMsg;  
+    private String errMsg;
+    private Object resData;
     
+	public Object getResData() {
+		return resData;
+	}
+	public void setResData(Object resData) {
+		this.resData = resData;
+	}
 	public int getErrCode() {
 		return errCode;
 	}

@@ -2,6 +2,9 @@ package com.sanan.demo.exception;
 
 public class SananErrorCode {
 	public static final int SUCCESS = 200;
+	public static final int FAIL = 500;
+	
+	
 //	public static final int INTERNAL_ERROR = 101;
 	
 	// Search ErrorCode
