@@ -86,6 +86,34 @@
 		    <groupId>org.apache.tomcat.embed</groupId>
 		    <artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>			
+		
+		
+		<!-- Google 로그인 연동 -->
+		<!-- 
+			Spring Social 
+			Connect your Spring application with 
+			Software-as-a-Service (SaaS) API providers 
+			such as Facebook, Twitter, and LinkedIn.
+		 -->
+		<!-- for GoogleOAuth2Template.class -->
+        <dependency>
+		    <groupId>org.springframework.social</groupId>
+		    <artifactId>spring-social-google</artifactId>
+		    <version>1.0.0.RELEASE</version>
+		</dependency>
+		<!-- for OAuth2Parameters.class -->
+        <dependency>
+       		<groupId>org.springframework.social</groupId>
+	        <artifactId>spring-social-core</artifactId>
+	        <version>1.1.6.RELEASE</version>
+	    </dependency>
+        <dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-core</artifactId>
+		    <version>2.9.9</version>
+		</dependency>
+
+        
 	</dependencies>
 
 
