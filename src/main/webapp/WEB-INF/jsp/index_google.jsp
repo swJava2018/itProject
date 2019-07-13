@@ -4,21 +4,47 @@
 	String url = (String)request.getAttribute("google_url");
 %>
 
-<div class="pure-menu pure-menu-horizontal">
+<!-- div class="pure-menu pure-menu-horizontal">
 	<ul class="pure-menu-list">
     	<li class="pure-menu-item pure-menu-disabled"><a href="../login" class="pure-menu-link">로그인</a></li>
     	<li class="pure-menu-item pure-menu-disabled"><a href="../enroll" class="pure-menu-link">회원가입</a></li>
     	<li class="pure-menu-item"><a href="../logout" class="pure-menu-link">로그아웃</a></li>
  	</ul>
-</div><hr>
+</div-->
 
-<h2 style="text-align:center">구글 로그인</h2>
+<section class="sec">
+	<article class="art">
+		<div class="picture1">
+				<img src="../img/main.jpg" alt="이미지">
+		</div>
+		<div class="box">
+			<div class="box2">
+				<h1 style="font-style: italic" class="it">IT Project</h1>
+				<div class="fom">
+					<button class="google" type="button"><a href="<%=url%>">
+						<img class="img" src="../img/google.png">
+						google로 로그인
+					</a></button>
+					<button class="face" type="button">
+						<img class="img" src="../img/facebook.png">
+						Facebook으로 로그인
+					</button>
+					<button class="naver" type="button">
+						<img class="img" src="../img/naver.png">
+						naver로 로그인
+					</button>
+				</div>
+			</div>
+		</div>
+	</article>
+</section>
 
-<div class="card">
+
+<!--h2 style="text-align:center">구글 로그인</h2-->
+
+<!-- div class="card">
    	<p><strong><a href="<%=url%>">로그인</a></strong></p>
-</div>
-
-
+</div-->
 
 <!-- pop-up -->
 <div id="keyword_modal" class="modal">

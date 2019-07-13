@@ -1,0 +1,125 @@
+body {
+	font-size: 14px;
+}
+
+.card {
+	width: 100%;
+	margin: auto;
+	
+    text-align: center;
+    font-family: arial;
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}        
+
+#keywordTbl {
+	position: absolute;		/* 문서기준 절대 위치 */
+	top: 180px;
+	left: 50%;
+	margin-left: -350px;
+	
+	width: 750px;
+}
+
+#keywordTbl table {
+    /* 배경, 크기 */
+    width: 700px;
+    word-break: break-all;	/* 글자가 너비 이상 넘어가면 줄바꿈 설정 */
+    table-layout: auto; 	/* 가로너비 자동*/
+    
+    /* 테두리 */
+    padding: 20px;
+    margin: auto;
+    border: 0px;
+    
+    /* 글자 */
+    font-size: 13px;
+    text-align: left;   
+}
+
+#latest10Tbl {
+	position: absolute;		/* 문서기준 절대 위치 */
+	top: 180px;
+	left: 50%;
+	margin-left: 380px;
+	
+	width: 120px;
+}
+
+#div1{
+	position:static;
+	line-height: 176.5px;
+   	display: block;
+	height:176.5px;
+	width:50%;
+	float:left;
+	text-align:center;
+	background:red;
+	font-size: 20px;
+}
+
+#div2{
+	position:static;
+	height:176.5px;
+	width:50%;
+	float:right;
+	text-align:center;
+	line-height: 176.5px;
+   	display: block;
+	background:orange;
+	font-size: 20px;
+}
+
+#div3{
+	position:static;
+	height:176.5px;
+	width:50%;
+	float:left;
+	text-align:center;
+	line-height: 176.5px;
+   	display: block;
+	background:yellow;
+	font-size: 20px;
+}
+
+#div4{
+	position:static;
+	height:176.5px;
+	width:50%;
+	float:right;
+	text-align:center;
+	line-height: 176.5px;
+   	display: block;
+	background:green;
+	font-size: 20px;
+}
+#div5{
+	position:static;
+	height:176.5px;
+	width:50%;
+	float:left;
+	text-align:center;
+	line-height: 176.5px;
+   	display: block;
+	background:blue;
+	font-size: 20px;
+}
+#div6{
+	position:static;
+	height:176.5px;
+	width:50%;
+	float:right;
+	text-align:center;
+	line-height: 176.5px;
+   	display: block;
+	background:purple;
+	font-size: 20px;
+}
+
+
+
+
+

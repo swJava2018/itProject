@@ -1,5 +1,11 @@
-body {
+html, body {
 	font-size: 14px;
+	height: 100%;
+}
+
+a{
+	text-decoration: none;
+	color: white;
 }
 
 .card {
@@ -49,6 +55,125 @@ body {
 	width: 120px;
 }
 
+.sec{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: lightskyblue;
+	border: 0px solid gray;
+	height: 100%;
+}
+
+.art{
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: center;
+	flex-grow: 1;
+	margin-top: 30px;
+	width: 100%;
+}
+
+.picture1{
+	align-self:center;
+    width: 240px;
+	height: 427px;
+	margin:15px;
+	border: 1px solid black;  
+}
+
+.box{
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
+	max-width: 350px;
+	width: 100%;
+}
+
+.box2{
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
+	flex-grow: 1;
+	background-color: white;
+	border: 1px solid lightgray;
+	border-radius: 10px;
+	padding: 10px 0;
+	margin: 0 0 10px;
+}
+
+.it{
+	background-repeat: no-repeat;
+	height: 51px;
+	width: 175px;
+	white-space: nowrap;
+	margin: 22px auto 12px;
+	text-align: center;
+}
+
+.fom{
+	display: flex;
+	flex-direction: column;	
+	align-items: stretch;
+	align-content: stretch;
+	justify-content: flex-start;
+	margin: 8px 40px 8px 40px;
+	flex: 0 0 auto;
+}
+
+.face{
+	background-color: steelblue;
+	border: 1px solid steelblue;
+	border-radius: 4px;
+	color: white;
+	position: relative;
+	box-sizing: border-box;
+	font-weight: 600;
+	padding: 5px 9px;
+	text-align: center;
+	width: auto;
+	margin-bottom: 15px;
+}
+
+.google{
+	background-color: firebrick;
+	border: 1px solid firebrick;
+	border-radius: 4px;
+	color: white;
+	position: relative;
+	box-sizing: border-box;
+	font-weight: 600;
+	padding: 5px 9px;
+	text-align: center;
+	width: auto;
+	margin-bottom: 15px;
+}
+
+.naver{
+	background-color: forestgreen;
+	border: 1px solid forestgreen;
+	border-radius: 4px;
+	color: white;
+	position: relative;
+	box-sizing: border-box;
+	font-weight: 600;
+	padding: 5px 9px;
+	text-align: center;
+	width: auto;
+	margin-bottom: 15px;
+}
+
+.img{
+	background-repeat: no-repeat;
+	background-position: -282px -319px;
+	height: 16px;
+	width: 16px;
+	margin-right: 8px;
+}
+
 #div1{
 	position:static;
 	line-height: 176.5px;
@@ -60,7 +185,6 @@ body {
 	background:red;
 	font-size: 20px;
 }
-
 #div2{
 	position:static;
 	height:176.5px;
@@ -72,7 +196,6 @@ body {
 	background:orange;
 	font-size: 20px;
 }
-
 #div3{
 	position:static;
 	height:176.5px;
@@ -84,7 +207,6 @@ body {
 	background:yellow;
 	font-size: 20px;
 }
-
 #div4{
 	position:static;
 	height:176.5px;
