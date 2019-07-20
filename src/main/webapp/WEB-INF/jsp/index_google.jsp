@@ -27,10 +27,10 @@
 						<img class="img" src="../img/google.png">
 						google로 로그인
 					</a></button>
-					<button class="face" type="button">
+					<button class="face" type="button"><a href="<%=facebook_url%>">
 						<img class="img" src="../img/facebook.png">
 						Facebook으로 로그인
-					</button>
+					</a></button>
 					<button class="naver" type="button"><a href="<%=naver_url%>">
 						<img class="img" src="../img/naver.png">
 						naver로 로그인

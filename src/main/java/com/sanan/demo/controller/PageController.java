@@ -19,8 +19,16 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.social.MissingAuthorizationException;
+import org.springframework.social.connect.Connection;
+import org.springframework.social.facebook.api.Facebook;
+import org.springframework.social.facebook.api.UserOperations;
+import org.springframework.social.facebook.api.impl.FacebookTemplate;
+import org.springframework.social.facebook.connect.FacebookConnectionFactory;
 import org.springframework.social.google.connect.GoogleOAuth2Template;
+import org.springframework.social.oauth2.AccessGrant;
 import org.springframework.social.oauth2.GrantType;
+import org.springframework.social.oauth2.OAuth2Operations;
 import org.springframework.social.oauth2.OAuth2Parameters;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,6 +36,7 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -35,6 +44,23 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Controller
 public class PageController {
 
+	/**
+	 * Facebook OAuth2
+	 */
+	private final String facebookAppId = "910683312657246";
+	private final String facebookAppSecret = "19e88a6e9c545f32755fd6f87dd2fc37";
+	
+    private FacebookConnectionFactory connectionFactory = new FacebookConnectionFactory(facebookAppId, facebookAppSecret);
+
+    private OAuth2Parameters oAuth2ParametersForFaceBook = getOAuth2ParamsForFaceBook();
+
+    private static OAuth2Parameters getOAuth2ParamsForFaceBook() {
+    	OAuth2Parameters params = new OAuth2Parameters();
+    	params.setScope("email");
+    	params.setRedirectUri("https://localhost:9443/facebookSignInCallback");
+    	return params;
+    }	
+    
 	/**
 	 * Naver OAuth
 	 */
@@ -66,6 +92,17 @@ public class PageController {
     
 	@RequestMapping(value = {"", "/"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public String join(Model model) {
+		
+		/**
+		 * facebook url
+		 */
+		OAuth2Operations oauthOperations = connectionFactory.getOAuthOperations();
+        String facebook_url = oauthOperations.buildAuthorizeUrl(GrantType.AUTHORIZATION_CODE, oAuth2ParametersForFaceBook);
+        
+        System.out.println("/facebookLogin, url : " + facebook_url);
+        model.addAttribute("facebook_url", facebook_url);
+		
+		
 		/**
 		 * google url
 		 */
@@ -185,6 +222,57 @@ public class PageController {
 	    
         return "redirect:/index_google";
 	}
+	
+	@RequestMapping(value = "/facebookSignInCallback", method = { RequestMethod.GET, RequestMethod.POST })
+    public String facebookSignInCallback(@RequestParam String code) throws Exception {
+ 
+        try {
+             String redirectUri = oAuth2ParametersForFaceBook.getRedirectUri();
+            System.out.println("Redirect URI : " + redirectUri);
+            System.out.println("Code : " + code);
+ 
+            OAuth2Operations oauthOperations = connectionFactory.getOAuthOperations();
+            AccessGrant accessGrant = oauthOperations.exchangeForAccess(code, redirectUri, null);
+            String accessToken = accessGrant.getAccessToken();
+            System.out.println("AccessToken: " + accessToken);
+            Long expireTime = accessGrant.getExpireTime();
+        
+            
+            if (expireTime != null && expireTime < System.currentTimeMillis()) {
+                accessToken = accessGrant.getRefreshToken();
+                System.out.println("accessToken is expired. refresh token = {}" + accessToken);
+            };
+            
+        
+            Connection<Facebook> connection = connectionFactory.createConnection(accessGrant);
+            Facebook facebook = connection == null ? new FacebookTemplate(accessToken) : connection.getApi();
+            UserOperations userOperations = facebook.userOperations();
+            
+            try
+            
+ //			https://developers.facebook.com/docs/facebook-login/permissions/v2.2?locale=ko_KR
+            
+            {            
+          String [] fields = { "email"};
+//        	User userProfile = facebook.fetchObject("me", User.class, fields);
+//        	System.out.println("유저이메일 : " + userProfile.getEmail());
+//        	System.out.println("유저이름 : " + userProfile.getName());
+//       	System.out.println("유저성별 : " + userProfile.getgender());
+//        	System.out.println("유저좋아요 : " + userProfile.getlikes());
+//         	System.out.println("유저 id : " + userProfile.getId());
+//                System.out.println("유저 name : " + userProfile.getName());
+                
+            } catch (MissingAuthorizationException e) {
+                e.printStackTrace();
+            }
+ 
+        
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "redirect:/index_google";
+ 
+    }
 	
 //	@Autowired
 //	UserService userService;
