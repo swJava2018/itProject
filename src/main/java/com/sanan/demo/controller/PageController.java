@@ -1,7 +1,14 @@
 package com.sanan.demo.controller;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.security.SecureRandom;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,6 +35,17 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Controller
 public class PageController {
 
+	/**
+	 * Naver OAuth
+	 */
+	private final String nclientId = "PrhV1w49TZbmWr6NJ51a";
+	private final String nclientSecret = "CA969ikOpO";
+	private final String nRedirectUrl = "http://localhost:8080/naverSignInCallback";
+	
+	
+	/**
+	 * Google OAuth
+	 */
 	private final String clientId = "205834302052-jn3qaoq9v9o9l85m4eabg0os8k1ejem0.apps.googleusercontent.com";
 	private final String clientSecret = "cZY3COcWY-kjWBt1V2KkDWYD";
 	
@@ -48,9 +66,28 @@ public class PageController {
     
 	@RequestMapping(value = {"", "/"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public String join(Model model) {
+		/**
+		 * google url
+		 */
 		String url = googleOAuth2Template.buildAuthenticateUrl(GrantType.AUTHORIZATION_CODE, googleOAuth2Parameters);
         System.out.println("/googleLogin, url : " + url);
         model.addAttribute("google_url", url);
+        
+        /**
+         * naver url 
+         */
+        String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code";
+        try {
+	        String redirectURI = URLEncoder.encode(nRedirectUrl, "UTF-8");
+	        SecureRandom random = new SecureRandom();
+	        String state = new BigInteger(130, random).toString();
+	        apiURL += "&client_id=" + nclientId;
+	        apiURL += "&redirect_uri=" + redirectURI;
+	        apiURL += "&state=" + state;
+        } catch (Exception e) {
+        	e.printStackTrace();
+        }
+        model.addAttribute("naver_url", apiURL);
         
 		return "index_google";
 	}
@@ -101,6 +138,51 @@ public class PageController {
         } catch(IOException e) {
         	e.printStackTrace();
         }
+        return "redirect:/index_google";
+	}
+	
+	@RequestMapping(value = {"/naverSignInCallback"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String doSessionAssignActionPage2(HttpServletRequest request) {
+		try {
+		    String code = request.getParameter("code");
+		    String state = request.getParameter("state");
+		    String redirectURI = URLEncoder.encode(nRedirectUrl, "UTF-8");
+		    String apiURL;
+		    apiURL = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&";
+		    apiURL += "client_id=" + nclientId;
+		    apiURL += "&client_secret=" + nclientSecret;
+		    apiURL += "&redirect_uri=" + redirectURI;
+		    apiURL += "&code=" + code;
+		    apiURL += "&state=" + state;
+		    String access_token = "";
+		    String refresh_token = "";
+		    System.out.println("apiURL="+apiURL);
+	    
+	      URL url = new URL(apiURL);
+	      HttpURLConnection con = (HttpURLConnection)url.openConnection();
+	      con.setRequestMethod("GET");
+	      int responseCode = con.getResponseCode();
+	      BufferedReader br;
+	      System.out.print("responseCode="+responseCode);
+	      if(responseCode==200) { // 정상 호출
+	        br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+	      } else {  // 에러 발생
+	        br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
+	      }
+	      String inputLine;
+	      StringBuffer res = new StringBuffer();
+	      while ((inputLine = br.readLine()) != null) {
+	        res.append(inputLine);
+	      }
+	      br.close();
+	      if(responseCode==200) {
+	    	  System.out.println(res.toString());
+	      }
+	    } catch (Exception e) {
+	      System.out.println(e);
+	    }
+
+	    
         return "redirect:/index_google";
 	}
 	

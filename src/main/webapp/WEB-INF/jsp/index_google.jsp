@@ -2,6 +2,8 @@
 <%@include file="include/top.jsp" %>
 <%
 	String url = (String)request.getAttribute("google_url");
+	String facebook_url = (String)request.getAttribute("facebook_url");
+	String naver_url = (String)request.getAttribute("naver_url");
 %>
 
 <!-- div class="pure-menu pure-menu-horizontal">
@@ -29,10 +31,10 @@
 						<img class="img" src="../img/facebook.png">
 						Facebook으로 로그인
 					</button>
-					<button class="naver" type="button">
+					<button class="naver" type="button"><a href="<%=naver_url%>">
 						<img class="img" src="../img/naver.png">
 						naver로 로그인
-					</button>
+					</a></button>
 				</div>
 			</div>
 		</div>
