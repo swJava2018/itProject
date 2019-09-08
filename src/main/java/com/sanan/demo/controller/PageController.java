@@ -64,9 +64,9 @@ public class PageController {
 	/**
 	 * Naver OAuth
 	 */
-	private final String nclientId = "PrhV1w49TZbmWr6NJ51a";
-	private final String nclientSecret = "CA969ikOpO";
-	private final String nRedirectUrl = "http://localhost:8080/naverSignInCallback";
+	private final String nclientId = "PrhV1w49TZbmWr6NJ51a";	//개발자 id, cnlientId에 넣는다
+	private final String nclientSecret = "CA969ikOpO";	//개발자 passwd, cnlientSecret에 넣는다
+	private final String nRedirectUrl = "http://localhost:8080/naverSignInCallback";	//로그인 후 돌아올 url, nRedirectUrl에 넣는다
 	
 	
 	/**
@@ -90,7 +90,7 @@ public class PageController {
     	return params;
     }	
     
-	@RequestMapping(value = {"", "/"}, method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = {"", "/"}, method = {RequestMethod.GET, RequestMethod.POST})	//@RequestMapping 은 특정 URL에 매칭되는 클래스나 메소드를 명시하는 애노테이션이다.
 	public String join(Model model) {
 		
 		/**
@@ -113,20 +113,20 @@ public class PageController {
         /**
          * naver url 
          */
-        String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code";
-        try {
-	        String redirectURI = URLEncoder.encode(nRedirectUrl, "UTF-8");
-	        SecureRandom random = new SecureRandom();
-	        String state = new BigInteger(130, random).toString();
-	        apiURL += "&client_id=" + nclientId;
-	        apiURL += "&redirect_uri=" + redirectURI;
-	        apiURL += "&state=" + state;
-        } catch (Exception e) {
+        String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code";	//인증을 요청할 url //이 과정은 네아로 연동 URL을 생성하는 과정이다.
+        try {	//시도
+	        String redirectURI = URLEncoder.encode(nRedirectUrl, "UTF-8");	//로그인 후 돌아올 url을 UTF-8로 인코딩
+	        SecureRandom random = new SecureRandom();	//난수 생성
+	        String state = new BigInteger(130, random).toString();	//state에 난수 삽입
+	        apiURL += "&client_id=" + nclientId;	//인증을 요청한 개발자 구분을 식별하기 위해 붙여준다
+	        apiURL += "&redirect_uri=" + redirectURI;	//돌아올 url 붙여준다
+	        apiURL += "&state=" + state;	//난수를 붙인다.
+        } catch (Exception e) {	//에러처리
         	e.printStackTrace();
         }
-        model.addAttribute("naver_url", apiURL);
-        
-		return "index_google";
+        model.addAttribute("naver_url", apiURL);	
+//예시 https://nid.naver.com/oauth2.0/authorize?response_type=code(인증요청)&client_id=PrhV1w49TZbmWr6NJ51a(붙인개발자client아이디)&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2FnaverSignInCallback(붙인rediectUrl 인코딩후라서 변화됌)&state=544941373412312141753425290393021804618(붙여진 난수)
+		return "index_google";	//jsp파일인 index_google.jsp를 불러와 로그인 성공 후 페이지에 뿌려준다
 	}
 	
 	@RequestMapping(value = {"/googleSignInCallback"}, method = {RequestMethod.GET, RequestMethod.POST})
@@ -178,49 +178,51 @@ public class PageController {
         return "redirect:/index_google";
 	}
 	
-	@RequestMapping(value = {"/naverSignInCallback"}, method = {RequestMethod.GET, RequestMethod.POST})
-	public String doSessionAssignActionPage2(HttpServletRequest request) {
-		try {
-		    String code = request.getParameter("code");
-		    String state = request.getParameter("state");
-		    String redirectURI = URLEncoder.encode(nRedirectUrl, "UTF-8");
-		    String apiURL;
-		    apiURL = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&";
-		    apiURL += "client_id=" + nclientId;
+	@RequestMapping(value = {"/naverSignInCallback"}, method = {RequestMethod.GET, RequestMethod.POST})	//@RequestMapping 은 특정 URL에 매칭되는 클래스나 메소드를 명시하는 애노테이션이다.
+	public String doSessionAssignActionPage2(HttpServletRequest request) {	//클라이언트의 요청과 관련된 정보와 동작을 가지고 있는 객체=httpservletrequest, httpservletrequest를 사용하여 request라는 값을 선언
+
+		try {	//네이버 로그인을 하기위해 ID, passwd를 입력하고 누르는 순간 넘어온다. // 토큰발급요청과정
+		    String code = request.getParameter("code");	//getParameter가 code에 값을 return시켜준다
+		    String state = request.getParameter("state");	//servletrequestwrapper클래스에서 getparameter함수에 "state"라는 이름이 들어감, state에 값을 return해준다
+		    String redirectURI = URLEncoder.encode(nRedirectUrl, "UTF-8");	//UTF-8로 인코딩
+		    String apiURL;	//apiURL선언
+		    apiURL = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&";	//apiURL에 값을 넣는다.
+		    apiURL += "client_id=" + nclientId;	//붙이기
 		    apiURL += "&client_secret=" + nclientSecret;
 		    apiURL += "&redirect_uri=" + redirectURI;
 		    apiURL += "&code=" + code;
 		    apiURL += "&state=" + state;
-		    String access_token = "";
-		    String refresh_token = "";
-		    System.out.println("apiURL="+apiURL);
+		    String access_token = "";	//성공토큰, 사용X
+		    String refresh_token = "";	//갱신토큰, 사용X
+		    System.out.println("apiURL="+apiURL);	//출력
+		    //(예시)apiURL=https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&client_id=PrhV1w49TZbmWr6NJ51a&client_secret=CA969ikOpO&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2FnaverSignInCallback&code=EzaNDXhsWPvKZVxKRq&state=1145868526368720793352199643586031103997
 	    
-	      URL url = new URL(apiURL);
-	      HttpURLConnection con = (HttpURLConnection)url.openConnection();
-	      con.setRequestMethod("GET");
-	      int responseCode = con.getResponseCode();
-	      BufferedReader br;
-	      System.out.print("responseCode="+responseCode);
-	      if(responseCode==200) { // 정상 호출
-	        br = new BufferedReader(new InputStreamReader(con.getInputStream()));
-	      } else {  // 에러 발생
+	      URL url = new URL(apiURL);	//만든 apiURL을 url에 넣는다 //요청 후 응답 과정
+	      HttpURLConnection con = (HttpURLConnection)url.openConnection();	//httpUrl연결
+	      con.setRequestMethod("GET");	//get방식
+	      int responseCode = con.getResponseCode();	//연결상태확인 "200"성공
+	      BufferedReader br;	//버퍼선언
+	      System.out.print("responseCode="+responseCode);	//출력
+	      if(responseCode==200) {	//정상 호출시
+	        br = new BufferedReader(new InputStreamReader(con.getInputStream()));	//주어진 문자 입력 스트림 in에 대해 기본 크기의 버퍼를 갖는 객체를 생성한다
+	      } else {	//에러 발생
 	        br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
 	      }
-	      String inputLine;
-	      StringBuffer res = new StringBuffer();
-	      while ((inputLine = br.readLine()) != null) {
-	        res.append(inputLine);
+	      String inputLine;	//inputLine생성
+	      StringBuffer res = new StringBuffer();	//버퍼생성
+	      while ((inputLine = br.readLine()) != null) {	//조건, 만일 inputLine에 한 줄씩 br버퍼를 읽었으면서 넣을 때 inputLine이 비어있지않다면
+	        res.append(inputLine);	//res값에 끝에 inputLine을 추가
 	      }
-	      br.close();
-	      if(responseCode==200) {
-	    	  System.out.println(res.toString());
+	      br.close();	//br버퍼닫기
+	      if(responseCode==200) {	//응답코드가 200이라면
+	    	  System.out.println(res.toString());	//res글자들 출력 -> res는 접근토큰, 갱신토큰, 갱신시간 등 정보가 있다
 	      }
-	    } catch (Exception e) {
+	    } catch (Exception e) {	//에러처리
 	      System.out.println(e);
 	    }
 
 	    
-        return "redirect:/index_google";
+        return "redirect:/index_google";	//로그인후 화면 뿌리기
 	}
 	
 	@RequestMapping(value = "/facebookSignInCallback", method = { RequestMethod.GET, RequestMethod.POST })
