@@ -1,16 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
         
-	    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
-	    <link rel="stylesheet" href="../res/css/sanan.css">
-	    <link rel="stylesheet" href="../res/css/sanan-popup.css">
-	
-	    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+       <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+       <link rel="stylesheet" href="../res/css/sanan.css">
+       <link rel="stylesheet" href="../res/css/sanan-popup.css">
+   
+       <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <!--script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script-->
         <script src="../res/js/sanan-ui.js"></script>
         <script src="../res/js/sanana-preview.js"></script>
+        <script src="../res/js/sanan-window.js"></script>
     </head>
 <body>
    <div class="nav">
@@ -64,12 +66,11 @@
     <div class="fl2">
         <div class="tibo"  style="width: 400px">
             <label class="bo font" for="img">이미지</label>
-            <div class="filebox">
-                    <div id="attach">
-                        <label class="waves-effect waves-teal btn-flat" for="uploadInputBox">업로드</label>
-                        <input id="uploadInputBox" style="display: none" type="file" name="filedata" multiple />
-                    </div>
+            <a href="#" onclick="openWin2()">
+            <div class="filebox">      
+                <label for="filebox">이미치창</label>
             </div>
+            </a>
         </div>
 
         <div class="tibo"  style="width: 400px">
@@ -102,7 +103,7 @@
         <textarea name="content" cols="40" rows="8" style="width:100%; margin:30px 30px 30px 30px; "></textarea>
     </div> -->
     <div class="fl">
-        <a href="C:/workspace_vs/src/index.html" target="_blank">
+        <a href="#" onclick="openWin()">
             <div class="filebox">
                 <label for="filebox">열기</label> 
             </div>
