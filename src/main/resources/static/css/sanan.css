@@ -24,7 +24,7 @@ a{
 }        
 
 #keywordTbl {
-	position: absolute;		/* ¹®¼­±âÁØ Àý´ë À§Ä¡ */
+	position: absolute;		/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ */
 	top: 180px;
 	left: 50%;
 	margin-left: -350px;
@@ -33,23 +33,23 @@ a{
 }
 
 #keywordTbl table {
-    /* ¹è°æ, Å©±â */
+    /* ï¿½ï¿½ï¿½, Å©ï¿½ï¿½ */
     width: 700px;
-    word-break: break-all;	/* ±ÛÀÚ°¡ ³Êºñ ÀÌ»ó ³Ñ¾î°¡¸é ÁÙ¹Ù²Þ ¼³Á¤ */
-    table-layout: auto; 	/* °¡·Î³Êºñ ÀÚµ¿*/
+    word-break: break-all;	/* ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½Êºï¿½ ï¿½Ì»ï¿½ ï¿½Ñ¾î°¡ï¿½ï¿½ ï¿½Ù¹Ù²ï¿½ ï¿½ï¿½ï¿½ï¿½ */
+    table-layout: auto; 	/* ï¿½ï¿½ï¿½Î³Êºï¿½ ï¿½Úµï¿½*/
     
-    /* Å×µÎ¸® */
+    /* ï¿½×µÎ¸ï¿½ */
     padding: 20px;
     margin: auto;
     border: 0px;
     
-    /* ±ÛÀÚ */
+    /* ï¿½ï¿½ï¿½ï¿½ */
     font-size: 13px;
     text-align: left;   
 }
 
 #latest10Tbl {
-	position: absolute;		/* ¹®¼­±âÁØ Àý´ë À§Ä¡ */
+	position: absolute;		/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ */
 	top: 180px;
 	left: 50%;
 	margin-left: 380px;
@@ -91,7 +91,7 @@ a{
 }
 
 .font{
-	font-size: 18px;
+	font-size: 15px;
 }
 
 .bo{
@@ -100,7 +100,7 @@ a{
 	border: 1px solid black;
 	text-align: center;
 	padding: 1px 0px 1px 0px;
-	margin-right: 20px;
+	margin-right: 10px;
 }
 
 .box{
@@ -287,7 +287,7 @@ a{
 }
 
 .filebox input[type="file"] { 
-	/* ÆÄÀÏ ÇÊµå ¼û±â±â */ 
+	/* ï¿½ï¿½ï¿½ï¿½ ï¿½Êµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ */ 
 	position: absolute; 
 	width: 1px; 
 	height: 1px; 

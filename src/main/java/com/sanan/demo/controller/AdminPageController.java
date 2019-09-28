@@ -11,6 +11,12 @@ public class AdminPageController {
 	@RequestMapping(value = {"register"}, method = {RequestMethod.GET, RequestMethod.POST})
     public String join(Model model) {
 		
-		return "sb/register";
+		return "register";
+	}
+	
+	@RequestMapping(value = {"list"}, method = {RequestMethod.GET, RequestMethod.POST})
+    public String list(Model model) {
+		
+		return "list";
 	}
 }
