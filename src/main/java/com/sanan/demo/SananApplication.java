@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import com.sanan.demo.data.entity.User;
+import com.sanan.demo.data.repository.ContestRepository;
 import com.sanan.demo.data.repository.UserRepository;
 
 @SpringBootApplication
@@ -16,12 +17,14 @@ public class SananApplication {
 	}
 
 	@Bean
-	public CommandLineRunner runner(UserRepository userRepository) throws Exception {
+	public CommandLineRunner runner(UserRepository userRepository, ContestRepository contestRepo) throws Exception {
 		return (args) -> {
 			User user = new User();
 			user.setId("sanan");
 			user.setPassword("$2a$10$l7yyCFPFmkmce8C1tFBqGeVkKc/UlxCT8eKrZuMqEzDbMnClaeUP2");
 			userRepository.save(user);
+			
+			PtContestDump.insertContestDump(contestRepo);
 		};
 	}
 	
