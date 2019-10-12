@@ -8,9 +8,9 @@
 	<link rel="stylesheet" href="css/sanan-popup.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="js/pt-ui.js"></script>
-	<script src="js/pt-preview.js"></script>
+	<script src="js/pt-previw.js"></script>
 	<script src="js/pt-connect.js"></script>	
-	<script src="../res/js/sanan-window.js"></script>
+	<!--  script src="../res/js/sanan-window.js"></script-->
 </head>
 
 <body>
@@ -30,34 +30,54 @@
 	    <div class="tibo"  style="width: 400px">
 	        <label class="bo font" for="field">분야</label>
 	        <input class="font" type="text" id="field" placeholder="분야">
+	    </div>
+	    
+	    <div class="tibo"  style="width: 400px">    
 	        <label class="bo font" for="sector">부문</label>
 	        <input class="font" type="text" id="sector" placeholder="부문">
 	    </div>
+	    
 	    <div class="tibo"  style="width: 400px">
 	        <label class="bo font" for="week">주회/주관</label>
 	        <input class="font" type="text" id="week" placeholder="주회/주간">
+	    </div>
+	     
+	    <div class="tibo"  style="width: 400px">
 			<label class="bo font" for="area">지역</label>
 	        <input class="font" type="text" id="area" placeholder="지역">
 	    </div>
+	    
 	    <div class="tibo"  style="width: 400px">
 	        <label class="bo font" for="subStart">신청접수</label>
 	        <input class="font" type="text" id="subStart" placeholder="신청접수">
-	        <label class="bo font" for="subEnd">신청접수</label>
+	    </div>
+	    
+	    <div class="tibo"  style="width: 400px">
+	        <label class="bo font" for="subEnd">신청종료</label>
 	        <input class="font" type="text" id="subEnd" placeholder="신청종료">
 	    </div>
+	    
 	    <div class="tibo"  style="width: 400px">
 	        <label class="bo font" for="preStart">예선시작</label>
 	        <input class="font" type="text" id="preStart" placeholder="공모전시작">
+	    </div>
+	    
+	    <div class="tibo"  style="width: 400px">
 	        <label class="bo font" for="preEnd">예선종료</label>
 	        <input class="font" type="text" id="preEnd" placeholder="공모전종료">
 	    </div>
+	    
 	    <div class="tibo"  style="width: 400px">
 	        <label class="bo font" for="onStart">공모전시작</label>
 	        <input class="font" type="text" id="onStart" placeholder="공모전시작">
+	    </div>
+	    
+	    <div class="tibo"  style="width: 400px">
 	        <label class="bo font" for="onEnd">공모전종료</label>
 	        <input class="font" type="text" id="onEnd" placeholder="공모전종료">
 	    </div>
     </div>
+    
     <div class="fl2">
         <div class="tibo"  style="width: 400px">
             <label class="bo font" for="img">이미지</label>

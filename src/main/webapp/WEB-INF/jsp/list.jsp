@@ -20,7 +20,12 @@
             <button class="nav-item">공모전 등록하기</button>
         </div>
     </div>
-
-    목록
+    
+     <div class="fl">
+        <box class="bo">번호</box>
+        <box class="bo">날짜</box>
+        <box class="bo">제목</box>
+    </div>
+    
 </body> 
 </html>

@@ -115,3 +115,15 @@ $(document).ready(function() {
         }
     });
 });
+
+function openWin(){  
+    window.open("http://localhost:8080/list", "새창", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );  
+}
+
+function openWin2(){  
+    window.open("http://localhost:8080/jsp/preview.jsp", "새창2", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );  
+}
+
+
+
+
