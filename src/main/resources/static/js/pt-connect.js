@@ -11,8 +11,8 @@ var connect = (function() {
 			url : reqListUrl,
 			dataType : "json",
 			success : function(result) {
-				if(result.errCode == 100) {
-					
+				if(result.resCode == 100) {
+					ui.refreshUI(result);
 				}
 			},
 			error : function(e) {

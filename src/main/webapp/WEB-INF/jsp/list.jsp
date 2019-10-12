@@ -9,8 +9,8 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="js/pt-connect.js"></script>	
 	<script src="js/pt-list-ui.js"></script>
-	<script src="js/pt-preview.js"></script>
-	<script src="../res/js/sanan-window.js"></script>
+	<script src="js/pt-previw.js"></script>
+	<script src="js/sanan-window.js"></script>
 </head>
 
 <body>
@@ -30,7 +30,7 @@
     <div class="fl">
         <box class="bo2 font" style="padding: 5px">1</box>
         <box class="bo2 font" style="padding: 5px">2019-10-12</box>
-        <box class="bo2 font" style="padding: 5px; width: 220px;"></box>
+        <box class="bo2 font" style="padding: 5px; width: 220px;" id="data1_title"></box>
     </div>
 
     <div class="fl">
