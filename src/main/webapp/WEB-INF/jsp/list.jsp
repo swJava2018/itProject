@@ -7,9 +7,9 @@
 	<link rel="stylesheet" href="css/sanan.css">
 	<link rel="stylesheet" href="css/sanan-popup.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="js/pt-connect.js"></script>	
 	<script src="js/pt-list-ui.js"></script>
 	<script src="js/pt-preview.js"></script>
-	<script src="js/pt-connect.js"></script>	
 	<script src="../res/js/sanan-window.js"></script>
 </head>
 
