@@ -16,16 +16,75 @@
 <body>
 	<div class="nav">
         <div class="nav-right-item">
-            <button class="nav-item">공모전 목록</button>
-            <button class="nav-item">공모전 등록하기</button>
+            <button class="nav-item">공모전<br> 목록</button>
+            <button class="nav-item">공모전<br> 등록하기</button>
         </div>
     </div>
     
-     <div class="fl">
-        <box class="bo">번호</box>
-        <box class="bo">날짜</box>
-        <box class="bo">제목</box>
+    <div class="fl">
+        <box class="bo font" style="padding: 5px;">번호</box>
+        <box class="bo font" style="padding: 5px;">날짜</box>
+        <box class="bo font" style="padding: 5px; width: 220px;">공모전 제목</box>
     </div>
-    
+
+    <div class="fl">
+        <box class="bo2 font" style="padding: 5px">1</box>
+        <box class="bo2 font" style="padding: 5px">2019-10-12</box>
+        <box class="bo2 font" style="padding: 5px; width: 220px;"></box>
+    </div>
+
+    <div class="fl">
+        <box class="bo2 font" style="padding: 5px"></box>
+        <box class="bo2 font" style="padding: 5px"></box>
+        <box class="bo2 font" style="padding: 5px; width: 220px;"></box>
+    </div>
+
+    <div class="fl">
+        <box class="bo2 font" style="padding: 5px"></box>
+        <box class="bo2 font" style="padding: 5px"></box>
+        <box class="bo2 font" style="padding: 5px; width: 220px;"></box>
+    </div>
+
+    <div class="fl">
+        <box class="bo2 font" style="padding: 5px"></box>
+        <box class="bo2 font" style="padding: 5px"></box>
+        <box class="bo2 font" style="padding: 5px; width: 220px;"></box>
+    </div>
+
+    <div class="fl">
+        <box class="bo2 font" style="padding: 5px"></box>
+        <box class="bo2 font" style="padding: 5px"></box>
+        <box class="bo2 font" style="padding: 5px; width: 220px;"></box>
+    </div>
+
+    <div class="fl">
+        <box class="bo2 font" style="padding: 5px"></box>
+        <box class="bo2 font" style="padding: 5px"></box>
+        <box class="bo2 font" style="padding: 5px; width: 220px;"></box>
+    </div>
+
+    <div class="fl">
+        <box class="bo2 font" style="padding: 5px"></box>
+        <box class="bo2 font" style="padding: 5px"></box>
+        <box class="bo2 font" style="padding: 5px; width: 220px;"></box>
+    </div>
+
+    <div class="fl">
+        <box class="bo2 font" style="padding: 5px"></box>
+        <box class="bo2 font" style="padding: 5px"></box>
+        <box class="bo2 font" style="padding: 5px; width: 220px;"></box>
+    </div>
+
+    <div class="fl">
+        <box class="bo2 font" style="padding: 5px"></box>
+        <box class="bo2 font" style="padding: 5px"></box>
+        <box class="bo2 font" style="padding: 5px; width: 220px;"></box>
+    </div>
+
+    <div class="fl">
+        <box class="bo2 font" style="padding: 5px"></box>
+        <box class="bo2 font" style="padding: 5px"></box>
+        <box class="bo2 font" style="padding: 5px; width: 220px;"></box>
+    </div>
 </body> 
 </html>

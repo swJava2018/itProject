@@ -1,7 +1,6 @@
 html, body {
 	font-size: 14px;
 	height: 100%;
-	overflow-x: visible;
 }
 
 a{
@@ -19,12 +18,12 @@ a{
 }
 
 .title {
-    color: grey;
+    color: black;
     font-size: 18px;
 }        
 
 #keywordTbl {
-	position: absolute;		/* �������� ���� ��ġ */
+	position: absolute;		/* 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙치 */
 	top: 180px;
 	left: 50%;
 	margin-left: -350px;
@@ -33,23 +32,23 @@ a{
 }
 
 #keywordTbl table {
-    /* ���, ũ�� */
+    /* 占쏙옙占�, 크占쏙옙 */
     width: 700px;
-    word-break: break-all;	/* ���ڰ� �ʺ� �̻� �Ѿ�� �ٹٲ� ���� */
-    table-layout: auto; 	/* ���γʺ� �ڵ�*/
+    word-break: break-all;	/* 占쏙옙占쌘곤옙 占십븝옙 占싱삼옙 占싼어가占쏙옙 占쌕바뀐옙 占쏙옙占쏙옙 */
+    table-layout: auto; 	/* 占쏙옙占싸너븝옙 占쌘듸옙*/
     
-    /* �׵θ� */
+    /* 占쌓두몌옙 */
     padding: 20px;
     margin: auto;
     border: 0px;
     
-    /* ���� */
+    /* 占쏙옙占쏙옙 */
     font-size: 13px;
     text-align: left;   
 }
 
 #latest10Tbl {
-	position: absolute;		/* �������� ���� ��ġ */
+	position: absolute;		/* 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙치 */
 	top: 180px;
 	left: 50%;
 	margin-left: 380px;
@@ -91,7 +90,7 @@ a{
 }
 
 .font{
-	font-size: 15px;
+	font-size: 18px;
 }
 
 .bo{
@@ -100,7 +99,17 @@ a{
 	border: 1px solid black;
 	text-align: center;
 	padding: 1px 0px 1px 0px;
-	margin-right: 10px;
+	margin-right: 20px;
+}
+
+.bo2{
+	display: inline-block;
+	height: 30px;
+	width: 100px;
+	border: 1px solid black;
+	text-align: center;
+	padding: 1px 0px 1px 0px;
+	margin-right: 20px;
 }
 
 .box{
@@ -210,7 +219,7 @@ a{
 
 
 .nav{
-	height: 60px;
+	height: 80px;
 	border: 1px solid black;
 	display: flex;
 	align-items: center;
@@ -225,7 +234,12 @@ a{
 }
 
 .nav-item{
-	margin-left: 10px;
+	border: solid 1px black;
+	margin-left: 20px;
+	margin-right: 20px;
+	font-size: 16px;
+	text-align: center;
+	padding: 10px;
 }
 
 .fl{
@@ -233,6 +247,8 @@ a{
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .fl2{
@@ -287,7 +303,7 @@ a{
 }
 
 .filebox input[type="file"] { 
-	/* ���� �ʵ� ����� */ 
+	/* 占쏙옙占쏙옙 占십듸옙 占쏙옙占쏙옙占� */ 
 	position: absolute; 
 	width: 1px; 
 	height: 1px; 
