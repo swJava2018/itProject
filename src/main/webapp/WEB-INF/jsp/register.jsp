@@ -16,8 +16,8 @@
 <body>
 	<div class="nav">
         <div class="nav-right-item">
-            <button class="nav-item">공모전<br> 목록</button>
-            <button class="nav-item">공모전<br> 등록하기</button>
+            <a href="list" class="nav-item">공모전<br> 목록</a>
+            <a href="register" class="nav-item">공모전<br> 등록하기</a>
         </div>
     </div>
 

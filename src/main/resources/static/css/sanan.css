@@ -90,12 +90,12 @@ a{
 }
 
 .font{
-	font-size: 18px;
+	font-size: 15px;
 }
 
 .bo{
 	display: inline-block;
-	width: 100px;
+	width: 200px;
 	border: 1px solid black;
 	text-align: center;
 	padding: 1px 0px 1px 0px;
@@ -105,7 +105,7 @@ a{
 .bo2{
 	display: inline-block;
 	height: 30px;
-	width: 100px;
+	width: 200px;
 	border: 1px solid black;
 	text-align: center;
 	padding: 1px 0px 1px 0px;
