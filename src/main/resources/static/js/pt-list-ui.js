@@ -5,14 +5,33 @@ $(document).ready(function(){
 var ui = (function() {
 	'use strict';
 	
+	var myList;
+	
 	/**
 	 * UI 로딩 초기화
 	 */
 	const readyUI = function() {
+		
+		// 데이터 가져와서 출력하기
 		connect.requestContestList();
+		
+		// 데이터 가져온거 선택해서 출력하기 (onClick)
+		var size = 1;
+		for(var i=1; i<=size; i++) {
+			
+			var i_n = '#data' + i + '_id';
+			
+			$(i_n).click(function(){
+//				$(i_n).hide();
+				var index = $(i_n).val();
+				chooseUI(index);
+			});
+		}
 	};
 	
 	const refreshUI = function(result) {
+		
+		myList = result;
 		
 		var size = 10;
 		if(size > result.result.length) {
@@ -26,6 +45,7 @@ var ui = (function() {
 			var tag = document.getElementById(tak);
 			var obj = result.result[i-1];
 			tag.innerHTML = obj.id;
+			$("#" + tak).val(obj.id);
 		}
 		
 		for(i=1; i<=size; i++)
@@ -43,6 +63,12 @@ var ui = (function() {
 				var obj3 = result.result[i-1];
 				tag3.innerHTML = obj3.name;
 			}
+	};
+	
+	const chooseUI = function(index) {
+		var url = "http://localhost:8080/popup/" + i;
+		var URL = myList.result[index-1];
+		window.open(URL,"새창", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes");
 	};
 	
 	// Member Functions

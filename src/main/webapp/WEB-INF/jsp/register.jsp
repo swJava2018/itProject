@@ -23,7 +23,7 @@
 
     <div class="tibo">
         <label class="bo title" for="title">제목</label>
-        <input class="title" type="text" id="title" placeholder="제목" style="width: 100%;">
+        <input class="title" type="text" maxlength="20" id="title" placeholder="제목" style="width: 100%;">
     </div>
     <section class="fl">
     <div class="fl2"> 
