@@ -1,17 +1,11 @@
 package com.sanan.demo.controller;
 
-import java.security.Timestamp;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Iterator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,6 +21,7 @@ public class AdminController {
 	@Autowired
 	ContestRepository contestRepo;
 	
+	/* 대회 등록 */
 	@RequestMapping(value = {"/contest_reg"}, method = {RequestMethod.GET, RequestMethod.POST})
     public ResponseMsg contest_reg(ContestReg contest) {
 		
@@ -75,9 +70,9 @@ public class AdminController {
 		return null;
     }
 	
-	@RequestMapping(value = {"contest_list"}, method = {RequestMethod.GET, RequestMethod.POST})
+	/* 대회 전체 조회 */
+	@RequestMapping(value = {"/contest_list"}, method = {RequestMethod.GET, RequestMethod.POST})
     public ResponseMsg contest_list() {
-		
 		Iterator<Contest> iter = contestRepo.findAll().iterator();
 		if(iter != null) {
 			ArrayList<Contest> list = new ArrayList<Contest>();
@@ -91,6 +86,24 @@ public class AdminController {
 			res.setResCode(100);
 			res.setResMsg("Success");
 			res.setResult(list);
+			return res;
+		} else {
+			ResponseMsg res = new ResponseMsg();
+			res.setResCode(200);
+			res.setResMsg("Fail");
+			return res;
+		}
+    }
+	
+	/* 대회 조회 */
+	@RequestMapping(value = {"/contest"}, method = {RequestMethod.GET, RequestMethod.POST})
+    public ResponseMsg contest(Integer contest_id) {
+		Contest one = contestRepo.findOne(contest_id);
+		if(one != null) {
+			ResponseMsg res = new ResponseMsg();
+			res.setResCode(100);
+			res.setResMsg("Success");
+			res.setResult(one);
 			return res;
 		} else {
 			ResponseMsg res = new ResponseMsg();

@@ -3,6 +3,26 @@ var connect = (function() {
 	
 	var reqRegUrl = '/contest_reg';
 	var reqListUrl = '/contest_list';
+	var reqContestUrl = '/contest';
+	
+	const requestContest = function(contest_id) {
+		
+		$.ajax({
+			type : "POST",
+			url : reqContestUrl,
+			data : contest_id,
+			dataType : "json",
+			success : function(result) {
+				if(result.resCode == 100) {
+					ui.refreshUI(result);
+				}
+			},
+			error : function(e) {
+				console.log("[enroll] requestEnroll() error : " + e.responseText);
+				alert("connection error : " + e.responseText);
+			}		
+		});
+	};
 	
 	const requestContestList = function(contest) {
 		
@@ -47,7 +67,8 @@ var connect = (function() {
 	// Member Functions
 	return {
 		requestContestList : requestContestList,
-		requestContestReg : requestContestReg
+		requestContestReg : requestContestReg,
+		requestContest : requestContest
 	};
 })();
 
