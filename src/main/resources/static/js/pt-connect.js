@@ -10,11 +10,13 @@ var connect = (function() {
 		$.ajax({
 			type : "POST",
 			url : reqContestUrl,
-			data : contest_id,
+			data : {
+				contest_id : contest_id
+			},
 			dataType : "json",
 			success : function(result) {
 				if(result.resCode == 100) {
-					ui.refreshUI(result);
+					one_ui.refreshUI(result);
 				}
 			},
 			error : function(e) {

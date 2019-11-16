@@ -65,10 +65,25 @@ var ui = (function() {
 			}
 	};
 	
+	
+	/**
+	 * 대회 정보 자세히 보기
+	 * 
+	 * 모달 팝업 참고 사이트 : https://stove99.github.io/javascript/2019/04/16/jquery-modal-plugin/
+	 */
 	const chooseUI = function(index) {
-		var url = "http://localhost:8080/popup/" + i;
-		var URL = myList.result[index-1];
-		window.open(URL,"새창", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes");
+		
+        $.popup({
+            url: '/list_one/' + index,
+            close: function(result) {
+                console.log(result);
+            }
+        });
+	    
+		
+		//var url = "http://localhost:8080/popup/" + i;
+		//var URL = myList.result[index-1];
+		//window.open(URL,"새창", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes");
 	};
 	
 	// Member Functions
