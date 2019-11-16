@@ -16,16 +16,19 @@ var ui = (function() {
 		connect.requestContestList();
 		
 		// 데이터 가져온거 선택해서 출력하기 (onClick)
-		var size = 1;
-		for(var i=1; i<=size; i++) {
-			
+		var size = 10;
+		var i=1
+		
+		while(i<=10) {
 			var i_n = '#data' + i + '_id';
-			
-			$(i_n).click(function(){
-//				$(i_n).hide();
-				var index = $(i_n).val();
-				chooseUI(index);
+			$(i_n).each(function(index) {
+			    $(this).on("click", function(){
+			    	var num = $(this).val();
+					chooseUI(num);
+			    });
 			});
+			
+			i++;
 		}
 	};
 	
