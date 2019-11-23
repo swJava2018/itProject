@@ -12,7 +12,7 @@ public class AdminPageController {
 	
 	@RequestMapping(value = {"register"}, method = {RequestMethod.GET, RequestMethod.POST})
     public String join(Model model) {
-		return "register";
+		return "register"; // 등록
 	}
 	
 	@RequestMapping(value = {"list"}, method = {RequestMethod.GET, RequestMethod.POST})
